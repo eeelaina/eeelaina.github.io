@@ -22,7 +22,7 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="minori">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="minori">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="minori">
@@ -226,7 +226,7 @@
    
 
 
-<article id="post-实梨的三个问题（自制考试）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-UVA11294-Wedding题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -237,7 +237,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/%E5%AE%9E%E6%A2%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%88%E8%87%AA%E5%88%B6%E8%80%83%E8%AF%95%EF%BC%89/">实梨的三个问题（自制考试）</a>
+        <a class="p-name article-title" href="/2023/11/07/UVA11294-Wedding%E9%A2%98%E8%A7%A3/">UVA11294 Wedding题解</a>
       </h1>
     
   
@@ -245,7 +245,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:35:29.000Z" itemprop="datePublished">2023-11-08</time>
+  <time class="dt-published" datetime="2023-11-07T11:50:39.000Z" itemprop="datePublished">2023-11-07</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -256,79 +256,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            49 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              原题大赛题目&amp;&amp;题解文件： 链接原题：P5596,P5569,P5339,P4921
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/11/08/%E5%AE%9E%E6%A2%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%88%E8%87%AA%E5%88%B6%E8%80%83%E8%AF%95%EF%BC%89/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-   
-
-
-<article id="post-（校内oj）D2ov2-生成树" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/%EF%BC%88%E6%A0%A1%E5%86%85oj%EF%BC%89D2ov2-%E7%94%9F%E6%88%90%E6%A0%91/">（校内oj）D2ov2.生成树</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:22:21.000Z" itemprop="datePublished">2023-11-08</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.9k 词 
+            3k 词 
           </div>
         </div>
         
@@ -339,8 +267,16 @@
         
           <div class="truncate-text">
             
-              模拟退火的例题但是应该要注意到直接枚举树的形态是不可取的，可能是组合成符合情况的树的方案太少了，本题用1027的种子可以2.3秒出正确答案，但是oj上就会wa，不知为何
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081#include&lt;bits/stdc++.h&gt;#pragma GCC optimize(2)using namespace std;const int F=600000;inline int read()&#123;    char ch=getchar();int x=0,f=1;    while(ch&lt;&#x27;0&#x27;||ch&gt;&#x27;9&#x27;)&#123;if(ch==&#x27;-&#x27;) f=-1;ch=getchar();&#125;    whil...
+              2-SAT
+先写一下题目翻译：
+有至多 $30$ 对夫妻将会参加一个婚宴。他们将会坐在一个长桌子的两边。
+新郎新娘坐在彼此相对的一端并且新娘带着一个头饰使得她看不到和她坐在同一边的人。夫妻（也就是参加新郎新娘婚礼的人，可以理解为宾客）坐在同一边是被视为“晦气”。并且这些人中还有人是通奸关系（同性恋或者非同性恋都有可能），并且新娘同时看到任何一对中的两个人也被视为“晦气”。你的工作是去安排人们坐在桌子两边从而避免任何“晦气”。
+思路：这一题第一眼是 2-SAT 考虑怎么拆点，应该要把每对夫妻拆成两个点：妻子和新娘坐在一起，丈夫和新娘坐在一起。
+然后考虑怎么连边：我的思路是把情况分为 $2$ 种，男女通奸，女女通奸（女男和男男的通奸关系和上面的两个关系类似）。
+
+男女通奸（男的所属夫妇用 $x$ 表示，女的所属夫妇用 $y$ 表示）：这对关系可以明确推导到 $xw$ 和新娘坐的时候， $yw$ 必然和新娘坐，（因为此时通奸中的男性和新郎坐了） $xh$ 和新娘坐的时候， $yh$ 必然和新娘坐。
+
+女女通奸（其所属的夫妇分别用 $x,y$ 表示）:这对关系可以明确推导到 $xw$ 和...
             
           </div>
         
@@ -352,7 +288,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/11/08/%EF%BC%88%E6%A0%A1%E5%86%85oj%EF%BC%89D2ov2-%E7%94%9F%E6%88%90%E6%A0%91/" 
+      href="/2023/11/07/UVA11294-Wedding%E9%A2%98%E8%A7%A3/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -370,7 +306,7 @@
    
 
 
-<article id="post-acwing1324-五子棋" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-P9423-蓝桥杯-2023-国-B-数三角" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -381,7 +317,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/acwing1324-%E4%BA%94%E5%AD%90%E6%A3%8B/">acwing1324.五子棋</a>
+        <a class="p-name article-title" href="/2023/11/07/P9423-%E8%93%9D%E6%A1%A5%E6%9D%AF-2023-%E5%9B%BD-B-%E6%95%B0%E4%B8%89%E8%A7%92/">P9423 [蓝桥杯 2023 国 B] 数三角</a>
       </h1>
     
   
@@ -389,150 +325,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:22:13.000Z" itemprop="datePublished">2023-11-08</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.8k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              简单题，不赘述123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include&lt;bits/stdc++.h&gt;using namespace std;const int F=30;int n,cl;int mapp[F][F];int read()&#123;    char ch=getchar();int x=0,f=1;    while(ch&lt;&#x27;0&#x27;||ch&gt;&#x27;9&#x27;)&#123;if(ch==&#x27;-&#x27;) f=-1;ch=getchar();&#125;    while(ch&gt;=&#x27;0&#x27;&amp;&amp;ch&lt;=&#x27;9&#x27;)&#123;x=(x&lt;&lt;1)+(x&lt;&lt;3)+ch-&#x27;0&#x27;;ch=getchar();&#125;    ret...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/11/08/acwing1324-%E4%BA%94%E5%AD%90%E6%A3%8B/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-   
-
-
-<article id="post-acwing1323-出现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/acwing1323-%E5%87%BA%E7%8E%B0/">acwing1323.出现</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:22:05.000Z" itemprop="datePublished">2023-11-08</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            335 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              简单题，不赘述
-123456789101112131415#include&lt;bits/stdc++.h&gt;using namespace std;const int F=6000000;int n,lx;int a[F];int main()&#123;    ios::sync_with_stdio(0);    cin.tie(0); cout.tie(0);    cin&gt;&gt;n;    for(int x,i=1;i&lt;=n;i++) cin&gt;&gt;x,a[x]=1,lx=max(lx,x);    for(int i=0;i&lt;=lx+1;i++) if(!a[i]) cout&lt;&lt;i&lt;&lt;&#x27;\n&#x27;,exit(0);    return 0;&#125;
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/11/08/acwing1323-%E5%87%BA%E7%8E%B0/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-   
-
-
-<article id="post-acwing1327-魔法学校" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/acwing1327-%E9%AD%94%E6%B3%95%E5%AD%A6%E6%A0%A1/">acwing1327.魔法学校</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:21:58.000Z" itemprop="datePublished">2023-11-08</time>
+  <time class="dt-published" datetime="2023-11-07T11:50:29.000Z" itemprop="datePublished">2023-11-07</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -554,9 +347,19 @@
         
           <div class="truncate-text">
             
-              莫队＋线段树做，是用来复习莫队的好题好像可持久化线段树也可做？不知道空间是否可行
-还有就是莫队的排序板子要记：1234bool cmp(sl2 a,sl2 b)&#123;    if(a.l/t != b.l/t) return a.l&lt;b.l;    return (a.l/t)&amp;1?a.r&lt;b.r:a.r&gt;b.r;&#125;
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100#include&lt;bits/stdc++.h&gt;#define int long long#define p1 p&lt;&lt;1#define p2 p&lt;&lt;1|1using namespace std;const int ...
+              二分题。
+在开始之前，我们要先了解一个结论：如果三个点都是整点，那么构不成一个等边三角形。
+可以得到证明：
+
+设三个整点分别为 $A$， $B$， $C$，则我们可以知道 $k_{ab}$， $k_{bc}$ 为有理数，更具夹角公式，不难得出 $\tan \angle BAC$ 也为有理数，又因为 $\tan \frac{\pi}{3}$ 为无理数（ $\sqrt{3} $）因此三个整点不可能组成等边三角形。
+
+因此我们可以得到一个“相当暴力”的做法：
+
+先对每一个点枚举出她和所有点所连的边（也就是将她作为中心点），并对他们按照长度为第一标准，终点的 $y$ 值为第二标准排序。
+
+然后从中取出长度相同的边（设有 $n$ 条），如果不考虑三点共线的情况，我们可以得出有 $\frac{n\times (n-1)}{2}$ 种等腰三角形。
+
+因为当我们固定一条边时，我们可以轻而易举的算出共线的时候第三点的坐标（利用中点公式），又因为我们按照 $y$ 为第二字典序排序，所以边长相同的点是按照 $y$ 排序，我们只用二分查找出符合 $y$ 的点，并计算其 $x$ 是否符合就行，如果符合就把...
             
           </div>
         
@@ -568,7 +371,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/11/08/acwing1327-%E9%AD%94%E6%B3%95%E5%AD%A6%E6%A0%A1/" 
+      href="/2023/11/07/P9423-%E8%93%9D%E6%A1%A5%E6%9D%AF-2023-%E5%9B%BD-B-%E6%95%B0%E4%B8%89%E8%A7%92/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -586,7 +389,7 @@
    
 
 
-<article id="post-acwing1326-军训队列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-P9426-蓝桥杯-2023-国-B-抓娃娃" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -597,7 +400,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/acwing1326-%E5%86%9B%E8%AE%AD%E9%98%9F%E5%88%97/">acwing1326.军训队列</a>
+        <a class="p-name article-title" href="/2023/11/07/P9426-%E8%93%9D%E6%A1%A5%E6%9D%AF-2023-%E5%9B%BD-B-%E6%8A%93%E5%A8%83%E5%A8%83/">P9426 [蓝桥杯 2023 国 B] 抓娃娃</a>
       </h1>
     
   
@@ -605,7 +408,163 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:21:52.000Z" itemprop="datePublished">2023-11-08</time>
+  <time class="dt-published" datetime="2023-11-07T11:50:20.000Z" itemprop="datePublished">2023-11-07</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            649 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              前缀和的使用模版题。
+我们不难知道如果套中了一半，必定会经过中点：
+
+设区间长度为 $len$ ，从最左端到中点的长度为 $len/2$ 从最右端到中带你的长度亦为 $len/2$ 如果不过中点则必定长度会小于 $len/2$ 因此如果套中了区间的长度为一半，必定会过该区间的中点。
+
+但是我们也要考虑一个问题：“如果中点的坐标是小数怎么办”。
+我们可以考虑将总长度扩大一倍，所选择区间也扩大一倍，我们就可以使得中点坐标为整数了！
+我们将中点标记完后，计算一个前缀和，然后就自然而然的可以求出答案啦！
+1234567891011121314151617181920#include&lt;bits/stdc++.h&gt;using namespace std;const int F=1000100;int n,m,len,ble,st,ed,ans;int a[2*F],block[2*F],out[2*F];int main()&#123;    cin&gt;&gt;n&gt;&gt;m;    for(int x,y,i=1;i&lt;=n;i++)&#123;        c...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/11/07/P9426-%E8%93%9D%E6%A1%A5%E6%9D%AF-2023-%E5%9B%BD-B-%E6%8A%93%E5%A8%83%E5%A8%83/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+   
+
+
+<article id="post-CF1821C-Tear-It-Apart" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/11/07/CF1821C-Tear-It-Apart/">CF1821C Tear It Apart</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-11-07T11:50:11.000Z" itemprop="datePublished">2023-11-07</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.2k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              本题解题关键：为了最小步数，我们删除的内容中一定不包括我们需要保留的字母。这个点不是很难证明：
+先假设一个序列，我们需要保留 $o$ ：
+$\texttt aaaaaaobbbbbbb $
+因为我们删除的字母不能是连续的，所以遇到保留的字母，我们可以看成把保留字母左边要删除的序列先进行一步删除（就是 $a$ ），再对右边序列进行一步删除（就是 $b$ ），而这两步可以看成同一步——同时对 $ab$ 序列进行删除，因为他们有 $o$ 进行间隔，不会影响 $a$ 序列最右边和 $b$ 序列最左边的的数字的删除，如果这两个序列这一步的最优删除法不在最右边或者最左边那就更没有影响了。
+因此我们完全不需要删除我们所需要保留的字母。
+于是乎我们可以把这个题目的问题转化为：求序列中每个相同字母之间间隔的最大值的最小值，然后对等长的序列进行完全删除所消耗的步骤。（因为如果你序列更长，他完全删除消耗的步数一定大于或者等于更短的序列）
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/11/07/CF1821C-Tear-It-Apart/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+   
+
+
+<article id="post-CF1821B-Sort-the-Subarray" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/11/07/CF1821B-Sort-the-Subarray/">CF1821B Sort the Subarray</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-11-07T11:50:00.000Z" itemprop="datePublished">2023-11-07</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -627,7 +586,25 @@
         
           <div class="truncate-text">
             
-              简单dp设f[i][j]为选了i组，他分组分到第j个位置的时候的最少花费，然后就很好想方程了，详细见代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include&lt;bits/stdc++.h&gt;#define int long longusing namespace std;const int F=600;const int N=2000;const int inf=1145141919;int n,k,out=inf;int a[N],f[F][F];int read()&#123;    char ch=getchar();int x=0,f=1;    while(ch&lt;&#x27;0&#x27;||ch&gt;&#x27;9&#x27;)&#123;if(ch==&#x27;-&#x27;) f=-1;ch=getchar();&#125;    while(ch&gt;=&#x27;0&#x27;&am...
+              本题主要解题方法是：
+先找出必须要排序的序列，再前和向后扩展。
+我们不难知道，最短的选择长度一定是从 $a$ 和 $a’$ 第一个不一样的字符到最后一个不一样的字符，比如：
+1231 2 3 4 51 2 4 3 5
+最短的选择就是 $3$ 和 $4$ 。
+
+更加具体的证明方法：根据操作只有一种——排序，可以得到只要同一位置有不同的数就必须要进行排序，将二者变为相同。
+
+接下来我们思考排序的性质对我们的选择进行扩大：
+
+先考虑向前扩大：
+
+如果添加的数比我们已经选择的那段数中最小值更小，那么添加进去后必然是放在我们序列前的，又因为单调递增的序列在从小到大排序时顺序不会改变，因此我们只需要在选择的序列前面扩展的序列是单调递增，且最大值小于我们选择序列中的最小值即可。
+
+再考虑向后扩大：
+
+如果添加的数比我们已经选择的那段数中最大值更大，那么添加进去后必然是放在我们序列后的，因此我们只需要只需要在选择的序列后面扩展的序列是单调递增，且最小值大于我们选择序列中的最大值即可。
+另外的直接在求完基础序列后考虑向前向后扩展是会超时的，因此需要在求基础序列的时候求单调增序列。
+12345678...
             
           </div>
         
@@ -639,7 +616,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/11/08/acwing1326-%E5%86%9B%E8%AE%AD%E9%98%9F%E5%88%97/" 
+      href="/2023/11/07/CF1821B-Sort-the-Subarray/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -657,7 +634,7 @@
    
 
 
-<article id="post-退役前一个月的刷题日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-CF1732B-Ugu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -668,7 +645,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/08/%E9%80%80%E5%BD%B9%E5%89%8D%E4%B8%80%E4%B8%AA%E6%9C%88%E7%9A%84%E5%88%B7%E9%A2%98%E6%97%A5%E5%BF%97/">退役前一个月的刷题日志</a>
+        <a class="p-name article-title" href="/2023/11/07/CF1732B-Ugu/">CF1732B Ugu</a>
       </h1>
     
   
@@ -676,7 +653,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-08T12:11:58.000Z" itemprop="datePublished">2023-11-08</time>
+  <time class="dt-published" datetime="2023-11-07T11:49:40.000Z" itemprop="datePublished">2023-11-07</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -687,80 +664,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            205 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              ​懒得粘贴了，11.6日以前的都在CSDN了链接下面是11.6日以后的了
-目录1,acwing1326.军训队列 update on 2023.11.82,acwing1327.魔法学校 update on 2023.11.83,acwing1323.出现 update on 2023.11.84,acwing1324.五子棋 update on 2023.11.85,（校内oj）D2ov2.生成树 update on 2023.11.8
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/11/08/%E9%80%80%E5%BD%B9%E5%89%8D%E4%B8%80%E4%B8%AA%E6%9C%88%E7%9A%84%E5%88%B7%E9%A2%98%E6%97%A5%E5%BF%97/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-   
-
-
-<article id="post-CF257E-Greedy-Elevator" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/07/CF257E-Greedy-Elevator/">CF257E Greedy Elevator</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-07T11:56:42.000Z" itemprop="datePublished">2023-11-07</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            5.5k 词 
+            1.3k 词 
           </div>
         </div>
         
@@ -771,25 +675,16 @@
         
           <div class="truncate-text">
             
-              第一道自己码的“打磨你”，体育节打了一天才做完。
-思路：0 分：vector+暴力跳时间（手法不可参考）
-100 分：
-开始之前我们要先知道两件事情：
-一旦这个人开始等电梯，那么这个人和电梯的相对位置不变。
+              首先我们可以把所有相邻且值相同的东西看作同一个数！因为这样子做必定会更优
 
-一旦这个人进入电梯，那么这个人的目标地点和电梯的相对位置不变。
+证明：假设一个数组….00000….“….”表示任意数且左侧的包含1，如想满足题目条件，必定要把00000便为11111,那么你是从中间破开变成00111？肯定不行因为之前说过，左侧的“….”还包含1，因此必定要再来一次把00111变成11111或00000,而如果直接把00000看作一个整体，然后从最左侧的“0”开始变，就可以一步到位，会更优
 
+最终字符串就变为1和0相互交错的数列且没有相邻且重复的数字
+因为我们要求的是升序，我们只需要求到第一个出现的1,然后求他后面出现的数有多少个就行
 
-证明：以 1 为例，一旦这个人开始等电梯，那么他如果被电梯经过他就会进入电梯而不会被跨过，所以相对位置不变，2 也同理
-模拟思路：
-开四个优先队列，分别存等待位置在电梯上方，电梯下方的电梯外的等待者和目标位置在电梯上方，电梯下方的电梯内的等待者。
+证明：一个数列101010101,最优的方法是从第一个0开始，变成1,然后再从变完的数列找到第一个0开始，变成1,如此往复：因为如果101010串不为1,他改变1,0性质之后，如果开始改变的点是0,就会变成1,但是它之后的点中1都会变成0！设后面的数目为num，改完之后0的个数就是num-1,再改就是num-2,如果想要全部变为1,就要num次！也就相当于最小次数为后面的数列长度
 
-每次跳的时候先判断方向（只用通过队列大小比较即可）
-
-随后（以向下跳为例）取出电梯下方中最上方的等待者和目标在电梯下方的电梯内的等待者，以及马上要开始等待的人，设电梯到电梯外的等待者的时间为 $tim1$ ，到目标点的时间为 $tim2$ ，此刻距离下一个开始等待的人的时间为 $tim3$ 。然后比较一下三者时间，哪个更小就转移到它那里即可。
-
-
-对于第三个操作，具体来说，同样以向下跳为例：首先时间加上三者中的最小，电梯位置也减去三者最小，然后如果是 $tim1...
+而关于为什么不把数列1010101...
             
           </div>
         
@@ -801,7 +696,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/11/07/CF257E-Greedy-Elevator/" 
+      href="/2023/11/07/CF1732B-Ugu/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -819,7 +714,7 @@
    
 
 
-<article id="post-CF209C-Trails-and-Glades" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-搭建博客时利用的资源" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -830,7 +725,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/07/CF209C-Trails-and-Glades/">CF209C Trails and Glades</a>
+        <a class="p-name article-title" href="/2023/11/07/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%88%A9%E7%94%A8%E7%9A%84%E8%B5%84%E6%BA%90/">搭建博客时利用的资源</a>
       </h1>
     
   
@@ -838,7 +733,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-07T11:50:55.000Z" itemprop="datePublished">2023-11-07</time>
+  <time class="dt-published" datetime="2023-11-07T11:45:13.000Z" itemprop="datePublished">2023-11-07</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -849,40 +744,19 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.8k 词 
+            29 词 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B5%84%E6%96%99/" rel="tag">资料</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
             
-              欧拉回路。
-思路：
-首先我们要学习一下欧拉回路的判断条件——“一个无向图存在欧拉回路，当且仅当该图所有顶点度数都为偶数,且该图是连通图。”
-注意上面那句话的两个要点：
+              github博客主题文章创建Latexnpm使用时的bug
 
-所有顶点度数都为偶数。
-
-图是连通图。
-
-
-然后我们对不是连通图的情况分类讨论：（下面的联通块代表无欧拉回路的联通块，欧拉联通块代表有欧拉回路的联通块）
-
-只有一个联通块：这一种情况只需要记录度数为奇数的点然后除以二就是连边的数量（每两个奇数点连一条边）。
-
-有多个欧拉联通块联通块（联通块可以转化为欧拉联通块，所以这里只考虑欧拉联通块）：块内的连边方式和 1 相同，考虑怎么把块组合到一起：
-
-
-
- 不难发现，上面的连边方式应该是最小的连边数（其中序号代表第几个欧拉联通块），因为 Vasya 还要回到第一个点。因此连的边数为 $n-1$（ $n$ 为欧拉联通块的个数）。
-接下来我们考虑怎么把一个初始的联通块，变成一个目标的联通块：（下面开始只考虑 2 的情况）
-我们不难发现，每个联通块必然连了两个出边，所以我们可以先分类讨论一下两种不同的联通块：
-
-联通块：我们把度为奇数的点连边连到只剩 $2$ 个用来和两个欧拉联...
             
           </div>
         
@@ -894,96 +768,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/11/07/CF209C-Trails-and-Glades/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-   
-
-
-<article id="post-UVA1391-Astronauts" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/07/UVA1391-Astronauts/">UVA1391 Astronauts</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-07T11:50:47.000Z" itemprop="datePublished">2023-11-07</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            2.2k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              2-SAT
-思路：第一眼看到的时候以为有三个选项，结果继续往下看才发现本质上只有两个选项，因为一个宇航员只能有两个选择：
-
-选择 A 或 B 任务。
-
-选择 C 任务。
-
-
-于是我们就可以把一个宇航员拆成“选 A 或 B”和“选 C”两个点并且可以得到下面这样的结论：
-
-当两个宇航员（$x,y$）同时大于或小于平均年龄时，通过 $x$ 选 C推到 $y$ 选 A或B。$x$ 选 A 或 B，推到 $y$ 选 C。通过 $y$ 选 C推到 $x$ 选 A或B。$y$ 选 A 或 B，推到 $x$ 选 C。
-
-当两个宇航员（$x,y$）不满足上面的条件时，通过 $x$ 选 C推到 $y$ 选 A或B。通过 $y$ 选 C推到 $x$ 选 A或B。
-
-
-然后按照上面的结论建一遍图，并且跑一遍 2-SAT 然后更具年龄输出答案即可。
-另外提醒一件重要的事情：注意计算平均数的精度。
-代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/11/07/UVA1391-Astronauts/" 
+      href="/2023/11/07/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%88%A9%E7%94%A8%E7%9A%84%E8%B5%84%E6%BA%90/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -1001,13 +786,13 @@
 
   <nav id="page-nav">
     <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
-    <a id="prev-btn" class="page-nav-btn disabled" href=" /  ">
+    <a id="prev-btn" class="page-nav-btn " href=" /  ">
       <i class="fa-solid fa-angle-left"></i>
     </a>
     <div id="num-bar">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a>  
+      <a class="page-number" href="/">1</a><span class="page-number current">2</span>  
     </div>
-    <a id="next-btn" class="page-nav-btn " href="/page/2/">
+    <a id="next-btn" class="page-nav-btn disabled" href="/">
       <i class="fa-solid fa-angle-right"></i>
     </a>
   </nav>

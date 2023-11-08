@@ -14,26 +14,24 @@
   
 
   
-  <title>CF209C Trails and Glades | minori</title>
+  <title>（校内oj）D2ov2.生成树 | minori</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="欧拉回路。 思路： 首先我们要学习一下欧拉回路的判断条件——“一个无向图存在欧拉回路，当且仅当该图所有顶点度数都为偶数,且该图是连通图。” 注意上面那句话的两个要点：  所有顶点度数都为偶数。  图是连通图。   然后我们对不是连通图的情况分类讨论：（下面的联通块代表无欧拉回路的联通块，欧拉联通块代表有欧拉回路的联通块）  只有一个联通块：这一种情况只需要记录度数为奇数的点然后除以二就是连边的数量">
+  <meta name="description" content="模拟退火的例题但是应该要注意到直接枚举树的形态是不可取的，可能是组合成符合情况的树的方案太少了，本题用1027的种子可以2.3秒出正确答案，但是oj上就会wa，不知为何 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF209C Trails and Glades">
-<meta property="og:url" content="http://example.com/2023/11/07/CF209C-Trails-and-Glades/index.html">
+<meta property="og:title" content="（校内oj）D2ov2.生成树">
+<meta property="og:url" content="http://example.com/2023/11/08/%EF%BC%88%E6%A0%A1%E5%86%85oj%EF%BC%89D2ov2-%E7%94%9F%E6%88%90%E6%A0%91/index.html">
 <meta property="og:site_name" content="minori">
-<meta property="og:description" content="欧拉回路。 思路： 首先我们要学习一下欧拉回路的判断条件——“一个无向图存在欧拉回路，当且仅当该图所有顶点度数都为偶数,且该图是连通图。” 注意上面那句话的两个要点：  所有顶点度数都为偶数。  图是连通图。   然后我们对不是连通图的情况分类讨论：（下面的联通块代表无欧拉回路的联通块，欧拉联通块代表有欧拉回路的联通块）  只有一个联通块：这一种情况只需要记录度数为奇数的点然后除以二就是连边的数量">
+<meta property="og:description" content="模拟退火的例题但是应该要注意到直接枚举树的形态是不可取的，可能是组合成符合情况的树的方案太少了，本题用1027的种子可以2.3秒出正确答案，但是oj上就会wa，不知为何 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/xcv025ld.png">
-<meta property="article:published_time" content="2023-11-07T11:50:55.000Z">
-<meta property="article:modified_time" content="2023-11-08T00:16:16.895Z">
+<meta property="article:published_time" content="2023-11-08T12:22:21.000Z">
+<meta property="article:modified_time" content="2023-11-08T12:24:03.220Z">
 <meta property="article:author" content="minori">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/xcv025ld.png">
   
     <link rel="alternate" href="/atom.xml" title="minori" type="application/atom+xml">
   
@@ -232,7 +230,7 @@
        
 
 
-<article id="post-CF209C-Trails-and-Glades" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-（校内oj）D2ov2-生成树" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -245,7 +243,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        CF209C Trails and Glades
+        （校内oj）D2ov2.生成树
       </h1>
     
   
@@ -253,7 +251,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-07T11:50:55.000Z" itemprop="datePublished">2023-11-07</time>
+  <time class="dt-published" datetime="2023-11-08T12:22:21.000Z" itemprop="datePublished">2023-11-08</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -264,7 +262,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.8k 词 
+            1.9k 词 
           </div>
         </div>
         
@@ -273,40 +271,8 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>欧拉回路。</p>
-<p>思路：</p>
-<p>首先我们要学习一下欧拉回路的判断条件——“一个无向图存在欧拉回路，当且仅当该图所有顶点度数都为偶数,且该图是连通图。”</p>
-<p>注意上面那句话的两个要点：</p>
-<ol>
-<li><p>所有顶点度数都为偶数。</p>
-</li>
-<li><p>图是连通图。</p>
-</li>
-</ol>
-<p>然后我们对不是连通图的情况分类讨论：（下面的联通块代表无欧拉回路的联通块，欧拉联通块代表有欧拉回路的联通块）</p>
-<ol>
-<li><p>只有一个联通块：这一种情况只需要记录度数为奇数的点然后除以二就是连边的数量（每两个奇数点连一条边）。</p>
-</li>
-<li><p>有多个欧拉联通块联通块（联通块可以转化为欧拉联通块，所以这里只考虑欧拉联通块）：块内的连边方式和 1 相同，考虑怎么把块组合到一起：</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xcv025ld.png" alt=""></p>
-</li>
-</ol>
-<p> 不难发现，上面的连边方式应该是最小的连边数（其中序号代表第几个欧拉联通块），因为 Vasya 还要回到第一个点。因此连的边数为 $n-1$（ $n$ 为欧拉联通块的个数）。</p>
-<p>接下来我们考虑怎么把一个初始的联通块，变成一个目标的联通块：（下面开始只考虑 2 的情况）</p>
-<p>我们不难发现，每个联通块必然连了两个出边，所以我们可以先分类讨论一下两种不同的联通块：</p>
-<ol>
-<li><p>联通块：我们把度为奇数的点连边连到只剩 $2$ 个用来和两个欧拉联通块连接，所以此时块内所需要的边数就是 $(n-2)\div 2$（ $n$ 是度为奇数的点的个数）。</p>
-</li>
-<li><p>欧拉联通块：因为我们不能空出两个点来和其他欧拉联通块连接，所以我们一定要连一条边。</p>
-</li>
-</ol>
-<p>总结一下上面的内容，我们就可以容易的得到一个式子： $(n_3-n_1\times 2){\div} 2+n_1+n_2$ （ $n_1$ 为联通块的个数， $n_2$ 为欧拉联通块的个数， $n_3$ 为度为奇数的个数）。</p>
-<p>PS：上面的式子没办法解决只有一个欧拉联通块的情况，需要特判一下。</p>
-<ul>
-<li>不理解的可以这样想： $(n_3-n_1\times 2){\div} 2$ 是联通块内连的边数 $n_1+n_2$ 是联通块之间连的边数。</li>
-</ul>
-<p>于是我们容易得到代码：（提醒一下，因为 Vasya 是从 1 号点开始走的，其必须经过 1 号点，所以如果 1 号和其他点没有连边，可以把这个点看成一个有自环的点，也就是一个欧拉联通块）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> F=<span class="number">1000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,cnt,flag,tot,n1,n2,n3;</span><br><span class="line"><span class="type">int</span> d[F],v[F],head[F],ver[<span class="number">3</span>*F],nxt[<span class="number">3</span>*F],fq[F];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    ver[++tot]=y;</span><br><span class="line">    nxt[tot]=head[x];</span><br><span class="line">    head[x]=tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(d[x]&amp;<span class="number">1</span>)&#123;</span><br><span class="line">        n3++;</span><br><span class="line">        flag=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    v[x]=<span class="number">1</span>; cnt++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=head[x];i;i=nxt[i])&#123;</span><br><span class="line">        <span class="type">int</span> y=ver[i];</span><br><span class="line">        <span class="keyword">if</span>(!v[y]) <span class="built_in">dfs</span>(y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fst</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;try.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">fst</span>();</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        <span class="keyword">if</span>(x!=y)&#123;</span><br><span class="line">            d[x]++; d[y]++;</span><br><span class="line">            <span class="built_in">add</span>(x,y);</span><br><span class="line">            <span class="built_in">add</span>(y,x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> fq[x]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!v[i])&#123;</span><br><span class="line">            flag=cnt=<span class="number">0</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(i);</span><br><span class="line">            <span class="keyword">if</span>(cnt&gt;<span class="number">1</span>||fq[i]||i==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(flag) n1++;</span><br><span class="line">                <span class="keyword">else</span> n2++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n1+n2==<span class="number">1</span>) cout&lt;&lt;n3/<span class="number">2</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">else</span> cout&lt;&lt;(n3-n1*<span class="number">2</span>)/<span class="number">2</span>+n1+n2&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>模拟退火的例题<br>但是应该要注意到直接枚举树的形态是不可取的，可能是组合成符合情况的树的方案太少了，本题用1027的种子可以2.3秒出正确答案，但是oj上就会wa，不知为何</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> F=<span class="number">600000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">char</span> ch=<span class="built_in">getchar</span>();<span class="type">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">&#x27;0&#x27;</span>||ch&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">&#x27;-&#x27;</span>) f=<span class="number">-1</span>;ch=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;ch&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+ch-<span class="string">&#x27;0&#x27;</span>;ch=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,dis,tot,hav,cct,flag;</span><br><span class="line"><span class="type">int</span> v[F],f[F],sack[F],yb[F];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; len[F];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==f[x]) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> f[x]=<span class="built_in">get</span>(f[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    f[<span class="built_in">get</span>(x)]=<span class="built_in">get</span>(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap_</span><span class="params">(<span class="type">int</span> &amp;x,<span class="type">int</span> &amp;y)</span></span>&#123;</span><br><span class="line">    x^=y^=x^=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">random_shuffle</span>(len[i].<span class="built_in">begin</span>(),len[i].<span class="built_in">end</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> f,<span class="type">int</span> dep)</span></span>&#123;</span><br><span class="line">    v[x]=cct;</span><br><span class="line">    hav+=dep;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len[x].<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="type">int</span> y=len[x][i];</span><br><span class="line">        <span class="keyword">if</span>(v[y]!=cct) <span class="built_in">dfs</span>(y,x,dep+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    hav=<span class="number">0</span>;</span><br><span class="line">    cct=(cct+<span class="number">1</span>)%<span class="number">10</span>+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(dis&lt;hav) dis=hav;</span><br><span class="line">    <span class="keyword">return</span> hav;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">th</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> t=<span class="number">100</span>;</span><br><span class="line">    <span class="keyword">while</span>(t&gt;<span class="number">1e-5</span>)&#123;</span><br><span class="line">        flag=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> x=<span class="built_in">rand</span>()%n+<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">random_shuffle</span>(len[x].<span class="built_in">begin</span>(),len[x].<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len[x].<span class="built_in">size</span>();i++) yb[i]=len[x][i];</span><br><span class="line">        <span class="type">int</span> st=<span class="built_in">work</span>();</span><br><span class="line">        <span class="type">int</span> del=dis-st;</span><br><span class="line">        <span class="keyword">if</span>(del&lt;<span class="number">0</span>) dis=st;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">exp</span>(del/t)*RAND_MAX&lt;<span class="built_in">rand</span>())&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len[x].<span class="built_in">size</span>();i++) len[x][i]=yb[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        t*=<span class="number">0.9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;try.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;tree.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;tree.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line">    <span class="built_in">srand</span>(<span class="number">250519</span>);</span><br><span class="line">    n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x,y,i=<span class="number">1</span>;i&lt;=m;++i) x=<span class="built_in">read</span>(),y=<span class="built_in">read</span>(),len[x].<span class="built_in">push_back</span>(y),len[y].<span class="built_in">push_back</span>(x);</span><br><span class="line">    dis=<span class="built_in">work</span>();</span><br><span class="line">    <span class="keyword">while</span> ((<span class="type">double</span>)<span class="built_in">clock</span>()/CLOCKS_PER_SEC&lt;<span class="number">2.9</span>) <span class="built_in">th</span>();</span><br><span class="line">    cout&lt;&lt;dis&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -320,25 +286,25 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2023/11/07/CF257E-Greedy-Elevator/"
-      title="CF257E Greedy Elevator"
+      href="/2023/11/08/%E5%AE%9E%E6%A2%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%88%E8%87%AA%E5%88%B6%E8%80%83%E8%AF%95%EF%BC%89/"
+      title="实梨的三个问题（自制考试）"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        CF257E Greedy Elevator
+        实梨的三个问题（自制考试）
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2023/11/07/UVA1391-Astronauts/"
-      title="UVA1391 Astronauts"
+      href="/2023/11/08/acwing1324-%E4%BA%94%E5%AD%90%E6%A3%8B/"
+      title="acwing1324.五子棋"
      >
 
     <p class="title-text">
       
-        UVA1391 Astronauts
+        acwing1324.五子棋
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
