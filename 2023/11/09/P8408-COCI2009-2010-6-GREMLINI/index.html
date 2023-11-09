@@ -14,21 +14,21 @@
   
 
   
-  <title>P9426 [蓝桥杯 2023 国 B] 抓娃娃 | minori</title>
+  <title>P8408 [COCI2009-2010#6] GREMLINI | minori</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="前缀和的使用模版题。 我们不难知道如果套中了一半，必定会经过中点：  设区间长度为 $len$ ，从最左端到中点的长度为 $len&#x2F;2$ 从最右端到中带你的长度亦为 $len&#x2F;2$ 如果不过中点则必定长度会小于 $len&#x2F;2$ 因此如果套中了区间的长度为一半，必定会过该区间的中点。  但是我们也要考虑一个问题：“如果中点的坐标是小数怎么办”。 我们可以考虑将总长度扩大一倍，所选择区间也扩大一倍，我">
+  <meta name="description" content="一个很好的dp题目，给我开拓了一个倍增dp的思路我们设 $f[p][i][j]$ ，表示i出生到j出生经理了 $2^p$ 代后最少经过了多长时间然后不难得到方程： $f[p][i][j]&#x3D;min(f[p][i][j],f[p-1][i][k]+f[p-1][k][j])$其中k需要我们从 $1~n$ 去暴力枚举点然后我们再从p的最大上限开始往下找，看看能不能符合要求，符合就更新，并添加对应的答案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P9426 [蓝桥杯 2023 国 B] 抓娃娃">
-<meta property="og:url" content="http://example.com/2023/11/07/P9426-%E8%93%9D%E6%A1%A5%E6%9D%AF-2023-%E5%9B%BD-B-%E6%8A%93%E5%A8%83%E5%A8%83/index.html">
+<meta property="og:title" content="P8408 [COCI2009-2010#6] GREMLINI">
+<meta property="og:url" content="http://example.com/2023/11/09/P8408-COCI2009-2010-6-GREMLINI/index.html">
 <meta property="og:site_name" content="minori">
-<meta property="og:description" content="前缀和的使用模版题。 我们不难知道如果套中了一半，必定会经过中点：  设区间长度为 $len$ ，从最左端到中点的长度为 $len&#x2F;2$ 从最右端到中带你的长度亦为 $len&#x2F;2$ 如果不过中点则必定长度会小于 $len&#x2F;2$ 因此如果套中了区间的长度为一半，必定会过该区间的中点。  但是我们也要考虑一个问题：“如果中点的坐标是小数怎么办”。 我们可以考虑将总长度扩大一倍，所选择区间也扩大一倍，我">
+<meta property="og:description" content="一个很好的dp题目，给我开拓了一个倍增dp的思路我们设 $f[p][i][j]$ ，表示i出生到j出生经理了 $2^p$ 代后最少经过了多长时间然后不难得到方程： $f[p][i][j]&#x3D;min(f[p][i][j],f[p-1][i][k]+f[p-1][k][j])$其中k需要我们从 $1~n$ 去暴力枚举点然后我们再从p的最大上限开始往下找，看看能不能符合要求，符合就更新，并添加对应的答案">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-07T11:50:20.000Z">
-<meta property="article:modified_time" content="2023-11-08T00:29:11.473Z">
+<meta property="article:published_time" content="2023-11-09T12:52:36.000Z">
+<meta property="article:modified_time" content="2023-11-09T13:28:36.091Z">
 <meta property="article:author" content="minori">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
        
 
 
-<article id="post-P9426-蓝桥杯-2023-国-B-抓娃娃" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-P8408-COCI2009-2010-6-GREMLINI" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -236,7 +236,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        P9426 [蓝桥杯 2023 国 B] 抓娃娃
+        P8408 [COCI2009-2010#6] GREMLINI
       </h1>
     
   
@@ -244,7 +244,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-07T11:50:20.000Z" itemprop="datePublished">2023-11-07</time>
+  <time class="dt-published" datetime="2023-11-09T12:52:36.000Z" itemprop="datePublished">2023-11-09</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -255,7 +255,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            649 词 
+            1.7k 词 
           </div>
         </div>
         
@@ -264,15 +264,8 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>前缀和的使用模版题。</p>
-<p>我们不难知道如果套中了一半，必定会经过中点：</p>
-<ul>
-<li>设区间长度为 $len$ ，从最左端到中点的长度为 $len/2$ 从最右端到中带你的长度亦为 $len/2$ 如果不过中点则必定长度会小于 $len/2$ 因此如果套中了区间的长度为一半，必定会过该区间的中点。</li>
-</ul>
-<p>但是我们也要考虑一个问题：“如果中点的坐标是小数怎么办”。</p>
-<p>我们可以考虑将总长度扩大一倍，所选择区间也扩大一倍，我们就可以使得中点坐标为整数了！</p>
-<p>我们将中点标记完后，计算一个前缀和，然后就自然而然的可以求出答案啦！</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> F=<span class="number">1000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,len,ble,st,ed,ans;</span><br><span class="line"><span class="type">int</span> a[<span class="number">2</span>*F],block[<span class="number">2</span>*F],out[<span class="number">2</span>*F];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x,y,i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        a[x+y]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*F<span class="number">-10</span>;i++) a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x,y,i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        cout&lt;&lt;a[<span class="number">2</span>*y]-a[<span class="number">2</span>*x<span class="number">-1</span>]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>一个很好的dp题目，给我开拓了一个倍增dp的思路<br>我们设 $f[p][i][j]$ ，表示i出生到j出生经理了 $2^p$ 代后最少经过了多长时间然后不难得到方程：<br> $f[p][i][j]=min(f[p][i][j],f[p-1][i][k]+f[p-1][k][j])$<br>其中k需要我们从 $1~n$ 去暴力枚举点<br>然后我们再从p的最大上限开始往下找，看看能不能符合要求，符合就更新，并添加对应的答案 $2^k$ k是我们当前枚举到了几层，可以证明这样一定是最优，因为 $2^{k-n}&lt;2^k$</p>
+<p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> F=<span class="number">205</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> P=<span class="number">1005</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">60</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> inf=<span class="number">1e18</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">char</span> ch=<span class="built_in">getchar</span>();<span class="type">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">&#x27;0&#x27;</span>||ch&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">&#x27;-&#x27;</span>) f=<span class="number">-1</span>;ch=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;ch&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+ch-<span class="string">&#x27;0&#x27;</span>;ch=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,t,out;</span><br><span class="line"><span class="type">int</span> f[N][F][F],son[P],minn[F],now[F];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;kawaii.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;kawaii.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line">    n=<span class="built_in">read</span>(),t=<span class="built_in">read</span>();</span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">0x3f</span>,<span class="built_in">sizeof</span>(f));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x,y,i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        x=<span class="built_in">read</span>(),y=<span class="built_in">read</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=x;j++) son[j]=<span class="built_in">read</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=x;j++) f[<span class="number">0</span>][i][son[j]]=<span class="built_in">min</span>(y+<span class="built_in">read</span>(),f[<span class="number">0</span>][i][son[j]]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> ml=<span class="number">1</span>;ml&lt;=<span class="number">50</span>;ml++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">1</span>;k&lt;=n;k++)&#123;</span><br><span class="line">                    f[ml][i][j]=<span class="built_in">min</span>(f[ml][i][j],f[ml<span class="number">-1</span>][i][k]+f[ml<span class="number">-1</span>][k][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">50</span>;k&gt;=<span class="number">0</span>;k--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) minn[i]=inf;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) minn[i]=<span class="built_in">min</span>(minn[i],now[j]+f[k][j][i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(minn[i]&lt;=t)&#123;flag=<span class="number">1</span>; <span class="keyword">break</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            out+=((<span class="type">int</span>)<span class="number">1</span>&lt;&lt;k);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) now[i]=minn[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;out&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         
       </div>
@@ -289,27 +282,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2023/11/07/P9423-%E8%93%9D%E6%A1%A5%E6%9D%AF-2023-%E5%9B%BD-B-%E6%95%B0%E4%B8%89%E8%A7%92/"
-      title="P9423 [蓝桥杯 2023 国 B] 数三角"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        P9423 [蓝桥杯 2023 国 B] 数三角
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2023/11/07/CF1821C-Tear-It-Apart/"
-      title="CF1821C Tear It Apart"
+      href="/2023/11/09/%E6%A0%A1%E5%86%85oj-D28r2-%E5%A4%9A%E6%A0%91/"
+      title="(校内oj)D28r2. 多树"
      >
 
     <p class="title-text">
       
-        CF1821C Tear It Apart
+        (校内oj)D28r2. 多树
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
