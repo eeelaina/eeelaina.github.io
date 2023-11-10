@@ -162,7 +162,7 @@
       
         <a class="archive-link" href="/archives/2023/11 ">
           十一月 2023 
-          <div class="archive-count">22 </div>
+          <div class="archive-count">23 </div>
         </a>
       
     </div>
@@ -175,6 +175,12 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/11/10/%E6%A0%A1%E5%86%85oj-Dajg5-%E8%BE%89%E4%B8%8B%E8%BE%A8%E7%9C%9F/" title="(校内oj)Dajg5. 辉下辨真" >
+            <div class="recent-link-text">
+              (校内oj)Dajg5. 辉下辨真
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/11/09/P8408-COCI2009-2010-6-GREMLINI/" title="P8408 [COCI2009-2010#6] GREMLINI" >
             <div class="recent-link-text">
@@ -200,12 +206,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/11/09/%E6%A0%A1%E5%86%85oj-Dgoar-%E8%AE%A1%E6%95%B0%E6%9C%9F%E6%9C%9B/" title="(校内oj)Dgoar. 计数期望" >
-            <div class="recent-link-text">
-              (校内oj)Dgoar. 计数期望
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -216,6 +216,71 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-acwing1323-出现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/11/08/acwing1323-%E5%87%BA%E7%8E%B0/">acwing1323.出现</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-11-08T12:22:05.000Z" itemprop="datePublished">2023-11-08</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            335 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <p>简单题，不赘述</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> F=<span class="number">6000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,lx;</span><br><span class="line"><span class="type">int</span> a[F];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x,i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;x,a[x]=<span class="number">1</span>,lx=<span class="built_in">max</span>(lx,x);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=lx+<span class="number">1</span>;i++) <span class="keyword">if</span>(!a[i]) cout&lt;&lt;i&lt;&lt;<span class="string">&#x27;\n&#x27;</span>,<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+
+       
+        <footer class="article-footer">
+           
+        </footer>
+         
+    </div>
+    
+     
+  </div>
+  
+</article>
+
+
+
+
+
    
 
 
@@ -910,89 +975,6 @@
 <p>因此我们完全不需要删除我们所需要保留的字母。</p>
 <p>于是乎我们可以把这个题目的问题转化为：求序列中每个相同字母之间间隔的最大值的最小值，然后对等长的序列进行完全删除所消耗的步骤。（因为如果你序列更长，他完全删除消耗的步数一定大于或者等于更短的序列）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">long</span> <span class="type">long</span> F = <span class="number">309999</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> t, len, val, out = F;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> opt[F], hav[F];</span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t--)</span><br><span class="line">	&#123;</span><br><span class="line">		out = F;</span><br><span class="line">		cin &gt;&gt; s;</span><br><span class="line">		len = s.<span class="built_in">length</span>();</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">26</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			opt[i] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			val = s[i] - <span class="string">&#x27;a&#x27;</span> + <span class="number">1</span>;</span><br><span class="line">			opt[val] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> j = <span class="number">1</span>; j &lt;= <span class="number">26</span>; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (val == j)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				opt[j]++;</span><br><span class="line">				hav[j] = <span class="built_in">max</span>(hav[j], opt[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">26</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			out = <span class="built_in">min</span>(out, hav[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> opt3 = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (out)</span><br><span class="line">		&#123;</span><br><span class="line">			out /= <span class="number">2</span>;</span><br><span class="line">			opt3++;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; opt3 &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">memset</span>(hav, <span class="number">0</span>, <span class="built_in">sizeof</span>(hav));</span><br><span class="line">		<span class="built_in">memset</span>(opt, <span class="number">0</span>, <span class="built_in">sizeof</span>(opt));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        
-      </div>
-
-       
-        <footer class="article-footer">
-           
-        </footer>
-         
-    </div>
-    
-     
-  </div>
-  
-</article>
-
-
-
-
-
-   
-
-
-<article id="post-CF1821B-Sort-the-Subarray" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-    
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/11/07/CF1821B-Sort-the-Subarray/">CF1821B Sort the Subarray</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-11-07T11:50:00.000Z" itemprop="datePublished">2023-11-07</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.3k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <p>本题主要解题方法是：</p>
-<h2 id="先找出必须要排序的序列，再前和向后扩展。"><a href="#先找出必须要排序的序列，再前和向后扩展。" class="headerlink" title="先找出必须要排序的序列，再前和向后扩展。"></a>先找出必须要排序的序列，再前和向后扩展。</h2><hr>
-<p>我们不难知道，最短的选择长度一定是从 $a$ 和 $a’$ 第一个不一样的字符到最后一个不一样的字符，比如：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">3</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
-<p>最短的选择就是 $3$ 和 $4$ 。</p>
-<ul>
-<li>更加具体的证明方法：根据操作只有一种——排序，可以得到只要同一位置有不同的数就必须要进行排序，将二者变为相同。</li>
-</ul>
-<p>接下来我们思考排序的性质对我们的选择进行扩大：</p>
-<ul>
-<li>先考虑向前扩大：</li>
-</ul>
-<p>如果添加的数比我们已经选择的那段数中最小值更小，那么添加进去后必然是放在我们序列前的，又因为单调递增的序列在从小到大排序时顺序不会改变，因此我们只需要在选择的序列前面扩展的序列是单调递增，且最大值小于我们选择序列中的最小值即可。</p>
-<ul>
-<li>再考虑向后扩大：</li>
-</ul>
-<p>如果添加的数比我们已经选择的那段数中最大值更大，那么添加进去后必然是放在我们序列后的，因此我们只需要只需要在选择的序列后面扩展的序列是单调递增，且最小值大于我们选择序列中的最大值即可。</p>
-<p>另外的直接在求完基础序列后考虑向前向后扩展是会超时的，因此需要在求基础序列的时候求单调增序列。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> F = <span class="number">3000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> out, len, s, t, flag, n, op, last, k, ml;</span><br><span class="line"><span class="type">int</span> a1[F], a2[F];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		cin &gt;&gt; a1[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		cin &gt;&gt; a2[i];</span><br><span class="line">	last = a1[<span class="number">1</span>];</span><br><span class="line">	ml = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">if</span> (!flag)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a1[i] != a2[i])</span><br><span class="line">			&#123;</span><br><span class="line">				s = i;</span><br><span class="line">				flag = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span> (a1[i - <span class="number">1</span>] &lt;= a2[s])</span><br><span class="line">					s -= ml;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (last &lt;= a1[i])</span><br><span class="line">					ml++;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					ml = <span class="number">1</span>;</span><br><span class="line">				last = a1[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a1[i] != a2[i])</span><br><span class="line">				t = i;</span><br><span class="line">		&#125; <span class="comment">// 求s和向前扩展的序列</span></span><br><span class="line">	k = t + <span class="number">1</span>;</span><br><span class="line">	last = a2[t];</span><br><span class="line">	<span class="keyword">if</span> (k &lt;= n)</span><br><span class="line">		<span class="keyword">while</span> (a1[k] &gt;= last)</span><br><span class="line">		&#123;</span><br><span class="line">			last = a1[k];</span><br><span class="line">			k++;</span><br><span class="line">			<span class="keyword">if</span> (k &gt; n)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	t = k - <span class="number">1</span>; <span class="comment">// 直接求向后扩展的序列</span></span><br><span class="line">	cout &lt;&lt; s &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; t &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin &gt;&gt; op;</span><br><span class="line">	<span class="keyword">while</span> (op--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">work1</span>();</span><br><span class="line">		s = t = <span class="number">0</span>;</span><br><span class="line">		flag = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         
       </div>
